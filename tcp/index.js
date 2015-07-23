@@ -15,6 +15,9 @@ var server = net.createServer(function(connectionListener){
         else{
            console.log("The no of connections in this server is "+count);
        }
+        connectionListener.on('data',function(data){
+            console.log("message for you sir"+data);
+        })
         connectionListener.on('end',function(){
             console.log("connection ended");
         })
